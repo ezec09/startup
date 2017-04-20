@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ejercicio 6</title>
+	</head>
+	<body>
+		<form id="user-info" enctype="multipart/form-data" method="POST">
+			<fieldset>
+				<legend>User Data</legend>
+				<p><label for= "firts-name">First Name:</label>
+				<input id= "firts-name" type="text" name="firts-name" placeholder="Your first name" required></p>
+				<p><label for= "last-name">Last Name:</label>
+				<input id= "last-name" type="text" name="last-name" placeholder="Your last name" required></p>
+				<p><label for= "email">Email:</label>
+				<input id= "email" type="email" name="email" placeholder="Your email" required></p>
+				<p><label for= "birthday">Birthday:</label>
+				<input id= "birthday" type="date" name="birthday" placeholder="dd/mm/aaaa"></p>
+				<p><label for="deportes">Choose you favourite sport: </label>
+				<select id="deportes" name="deportes">
+					<option value="basquet">Basquet</option>
+					<option value="futbol">Futbol</option>
+					<option value="golf">Golf</option>
+					<option value="hockey">Hockey</option>
+					<option value="empty" selected>Nada</option>
+				</select></p>
+				<p>
+					<label for="small-bio">Small bio of you:</label><br>
+					<textarea id="small-bio" name="small-bio" rows="7" cols="40" placeholder="Samll biography of you, 200 letters max" maxlength="200"></textarea>
+				</p>
+				<p><input type="submit" value="Register">
+				<input type="reset" value="Clear"> </p>
+			</fieldset>
+		</form>
+	</body>
+</html>
