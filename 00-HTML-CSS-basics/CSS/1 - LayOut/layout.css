@@ -1,0 +1,60 @@
+.common-box {
+	/*box properties*/
+	border-radius: 12px;
+	border: black 1px solid;
+	/*text properties*/
+	text-align: center
+}
+
+.column {
+	box-sizing: border-box;
+	height: 500px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#main-page > header {
+	/*box properties*/
+	background-color: green;
+}
+
+#main-page > nav {
+	/*box properties*/
+	background-color: magenta;
+	width: 25%;
+	float: left;
+}
+
+#main-page > section {
+	/*box properties*/
+	background-color: red;
+	width: 48%;
+	float: left;
+	margin-right: 1%;
+	margin-left: 1%;
+}
+
+#main-page > aside {
+	/*box properties*/
+	background-color: blue;
+	width: 25%;
+	float: left;
+}
+
+#main-page > footer {
+	clear: left;
+	background-color: yellow;
+
+}
+
+section header, section article, section footer {
+	margin: 5px;
+}
+
+section article {
+	height: 270px;
+}
+
+section header, section footer {
+	height: 75px;
+}

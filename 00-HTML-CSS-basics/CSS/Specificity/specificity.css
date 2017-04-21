@@ -1,0 +1,58 @@
+html {
+	font-size: 14px;
+	font-family: sans-serif;
+}
+aside, nav {
+	background-color: red;
+}
+header, footer{
+	background-color: green;
+	text-align: center;
+}
+
+.header {
+	font-size: 46px;
+}
+
+.footer {
+	font-size: 10px;
+}
+
+.navigation {
+	font-size: 12px;
+}
+
+.sidebar {
+	font-size: 10px;
+}
+
+.content {
+	font-size: 14px;
+}
+
+[class$="r"]{
+	background-color: magenta;
+}
+
+[class*="a"]:not([class$="r"]) {
+	background-color: blue;
+}
+/*6. How could you add weight to the global font definition to win over the classes added 
+by point 3? 
+las clases tienen peso 0010 asi que tengo q buscar algo de mayor peso*/
+/*html [class] {
+	font-size: 14px;
+	font-family: sans-serif;
+}*/
+/*este codigo ^^ va a tener un peso de espicifidad de 0011 
+ya que ademas de tener una pseudo0clase tiene un elemento */
+
+
+/*7. Imagine there is a declaration like class=”oh-no-inline-styles” style=”background:red” 
+and you need to change the background to green without changing the inline style. \
+How could you accomplish this?
+para tener mas peso que un style se puede usar !important*/
+/*.oh-no-inline-styles {
+	background-color: green !important;
+}*/
+/*y esta parte de codigo ^^ tendria mas peso que el inline style*/

@@ -1,0 +1,11 @@
+html {
+	font-size: 14px;
+	font-family: sans-serif;
+}
+aside, nav {
+	background-color: red;
+}
+header, footer{
+	background-color: green;
+	text-align: center;
+}
