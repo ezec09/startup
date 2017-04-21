@@ -2,6 +2,20 @@ body {
 	background-color: white;
 	width: 1000px;
 	margin: 0 auto;
+	border-style: dotted;
+}
+
+header {
+	text-align: center;
+	text-decoration: underline;
+}
+
+div {
+	width: 300px;
+	height: 150px;
+	display: inline-block;
+	position: relative;
+	margin: 15px;
 }
 
 img {
@@ -9,11 +23,22 @@ img {
 	height: 150px;
 }
 
-div {
-	width: 30%;
-	display: inline-block;
-	margin: 15px;
+.info-banderas {
+	/*Propiedades posicion*/
+	position: absolute;
+	top: 0px;
+	margin: 0px;
+	/*Propiedas bloque visibilidad*/
+	width: 280px;
+	height: 130px;
+	background-color : rgba(0,0,0,0.5);
+	opacity: 0;
+	/*Propiedades de texto*/
+	padding: 10px;
+	font-size: 20px;
+	color: orange;
+	font-weight: bold;
 }
-header {
-	text-align: center;
+.info-banderas:hover {
+	opacity: 1;
 }
