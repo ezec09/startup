@@ -6,8 +6,26 @@ body {
 }
 
 header {
+	text-align: justify;
+	padding: 10px;
+	height: 100px;
+}
+
+header h1{
+	float: left;
 	text-align: center;
 	text-decoration: underline;
+	width: 150px;
+}
+
+header p {
+	width: 600px;
+	float: right;
+}
+
+.float-clear {
+	display: none;
+	clear: both;
 }
 
 div {
@@ -41,4 +59,37 @@ img {
 }
 .info-banderas:hover {
 	opacity: 1;
+}
+
+@media (min-width: 600px) and (max-width: 800px) {
+	header {
+		height: 150px;
+	}
+
+	header p {
+		width: 400px;
+		float: right;
+	}	
+	body {
+		width: 700px;
+	}
+
+	div {
+		width: 200px;
+		height: 100px;
+	}
+
+	img {
+		width: 200px;
+		height: 100px;
+	}
+
+	.info-banderas {
+		/*Propiedas bloque visibilidad*/
+		width: 180px;
+		height: 80px;
+		/*Propiedades de texto*/
+		padding: 10px;
+		font-size: 14px;
+	}
 }
