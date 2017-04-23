@@ -1,0 +1,181 @@
+section {
+	background-color: white;
+	font-size:0; /* Tuve q ponerle 0 porque use inline block y eso toma 
+					los espacion de html entonces al poner 50% me rompia 
+					dos componentes en dos lines en vez de una*/
+	width: 1000px;
+	margin: 0 auto;
+
+}
+
+header {
+	font-size: 16px;
+	text-align: justify;
+	padding: 10px;
+	height: 100px;
+}
+
+header h1 {
+	float: left;
+	text-align: center;
+	text-decoration: underline;
+	width: 150px;
+}
+
+header p {
+	width: 600px;
+	float: right;
+}
+
+.float-clear {
+	display: none;
+	clear: both;
+}
+
+.una-bandera-container {
+	width: 300px;
+	height: 150px;
+	position: relative;
+	display: inline-block;
+	margin: 10px 16px 10px 16px;
+}
+
+.bandera {
+	width: 300px;
+	height: 150px;
+}
+
+.info-banderas {
+	/*Propiedades posicion*/
+	position: absolute;
+	top: 0px;
+	margin: 0px;
+	/*Propiedas bloque visibilidad*/
+	width: 280px;
+	height: 130px;
+	background-color : rgba(0,0,0,0.5);
+	opacity: 0;
+	/*Propiedades de texto*/
+	padding: 10px;
+	font-size: 20px;
+	color: orange;
+	font-weight: bold;
+}
+
+.info-banderas:hover {
+	opacity: 1;
+}
+
+@media (min-width: 666px) and (max-width: 900px) {
+	section {
+		width: 90%;
+	}
+
+	header {
+		height: 170px;
+	}
+
+	header p {
+		width: 340px;
+		float: right;
+	}
+
+	.una-bandera-container {
+		box-sizing: border-box;
+		display: inline-block;
+		width: 50%;
+		height: 125px;
+		margin: 20px 0 0 0;
+
+	}
+
+	.bandera {
+		display: block;
+		margin: 0 auto;
+		width: 250px;
+		height: 125px;
+	}
+
+	.info-banderas {
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		/*Propiedas bloque visibilidad*/
+		width: 230px;
+		height: 105px;
+		/*Propiedades de texto*/
+		padding: 10px;
+		font-size: 14px;
+	}
+}
+
+@media (min-width: 400px) and (max-width: 665px) {
+	
+	section {
+		width: 90%;
+	}
+	header {
+
+		height: auto;
+	}
+
+	header h1 {
+		float: none;
+		width: 85%;
+		margin: 0 auto;
+	}
+
+	header p {
+		float: none;
+		width: 85%;
+		margin: 10px auto;
+	}
+
+	.una-bandera-container {
+		float: none;
+		display: block;
+		margin: 20px auto;
+	}	
+}
+
+@media (min-width: 200px) and (max-width: 399px) {
+	section {
+		width: 90%;
+	}
+	header {
+
+		height: auto;
+	}
+
+	header h1 {
+		float: none;
+		width: 85%;
+		margin: 0 auto;
+	}
+
+	header p {
+		display: none;
+	}
+
+	.una-bandera-container {
+		float: none;
+		display: block;
+		margin: 10px auto;
+		width: 180px;
+		height: 90px;
+	}
+
+	.bandera {
+		width: 180px;
+		height: 90px;
+	}
+
+	.info-banderas {
+		/*Propiedas bloque visibilidad*/
+		width: 160px;
+		height: 70px;
+		/*Propiedades de texto*/
+		padding: 10px;
+		font-size: 14px;
+	}	
+}

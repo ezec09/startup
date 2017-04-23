@@ -1,17 +1,21 @@
-body {
+section {
 	background-color: white;
+	font-size:0; /* Tuve q ponerle 0 porque use inline block y eso toma 
+					los espacion de html entonces al poner 50% me rompia 
+					dos componentes en dos lines en vez de una*/
 	width: 1000px;
 	margin: 0 auto;
-	border-style: dotted;
+
 }
 
 header {
+	font-size: 16px;
 	text-align: justify;
 	padding: 10px;
 	height: 100px;
 }
 
-header h1{
+header h1 {
 	float: left;
 	text-align: center;
 	text-decoration: underline;
@@ -28,15 +32,15 @@ header p {
 	clear: both;
 }
 
-div {
+.una-bandera-container {
 	width: 300px;
 	height: 150px;
-	display: inline-block;
 	position: relative;
-	margin: 15px;
+	display: inline-block;
+	margin: 10px 16px 10px 16px;
 }
 
-img {
+.bandera {
 	width: 300px;
 	height: 150px;
 }
@@ -57,39 +61,7 @@ img {
 	color: orange;
 	font-weight: bold;
 }
+
 .info-banderas:hover {
 	opacity: 1;
-}
-
-@media (min-width: 600px) and (max-width: 800px) {
-	header {
-		height: 150px;
-	}
-
-	header p {
-		width: 400px;
-		float: right;
-	}	
-	body {
-		width: 700px;
-	}
-
-	div {
-		width: 200px;
-		height: 100px;
-	}
-
-	img {
-		width: 200px;
-		height: 100px;
-	}
-
-	.info-banderas {
-		/*Propiedas bloque visibilidad*/
-		width: 180px;
-		height: 80px;
-		/*Propiedades de texto*/
-		padding: 10px;
-		font-size: 14px;
-	}
 }
