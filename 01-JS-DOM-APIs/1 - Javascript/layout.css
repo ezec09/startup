@@ -1,0 +1,40 @@
+section {
+	text-align: center;
+}
+
+section:nth-of-type(3) {
+	opacity: 0;
+}
+
+button {
+	display: block;
+	margin: 10px auto;
+	width: 100px;
+}
+
+div:first-of-type {
+	width: 64%;
+	float: left;
+}
+
+div:last-of-type {
+	width: 34%;
+	float: right;
+}
+
+div:last-of-type section {
+	text-align:left;
+}
+
+div:last-of-type ul {
+	text-align:left;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+div:last-of-type p {
+	text-align:left;
+	margin-top: 5px;
+	margin-bottom: 0px;
+}
+
