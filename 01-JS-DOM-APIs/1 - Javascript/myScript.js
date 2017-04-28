@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded",init)
 var seccionRepositorio = document.body.getElementsByTagName("section")[3];
 var seccionAFadein = document.body.getElementsByTagName("section")[2];
 var repoBuscadoCampo = document.getElementById("repo-buscado");
+var tabla = document.body.getElementsByTagName("table")[0];
 
 //Funciones que use para varios puntos -------------------------
 function appendNodeWithText(parent, nodoTag, text){
@@ -23,7 +24,8 @@ function fadein(elemento, wantedOpacity, aumentPerInterval,timer) {
 //Funciones para punto 6 y 7 -----------------------------------
 function appendRespuesta() {
 	var articuloSeccion = document.body.getElementsByTagName("section")[2].getElementsByTagName("article")[0];
-	appendNodeWithText(articuloSeccion,"p",this.responseText);
+	var joke = JSON.parse(this.responseText);
+	appendNodeWithText(articuloSeccion,"p",joke.value.joke);
 }
 
 function pedirRecurso(metodo, url, asincronico, funcionManejadora) {
@@ -34,7 +36,7 @@ function pedirRecurso(metodo, url, asincronico, funcionManejadora) {
 }
 
 function onClickPedirJoke() {
-	pedirRecurso("GET", "http://api.icndb.com/jokes/random",true,appendRespuesta	);
+	pedirRecurso("GET", "http://api.icndb.com/jokes/random",true,appendRespuesta);
 }
 //--------------------------------------------------------------
 //Funciones para punto 8 ---------------------------------------
@@ -50,7 +52,7 @@ function manejarRespuesta() {
 
 	}
 	else if(between(this.status,500,599)) {
-		seccionAFadein.style.background = "red";
+		seccionAFadein.getElementsByTagName("article")[0].style.background = "red";
 	}
 }
 
@@ -70,13 +72,18 @@ function crearliDeListas(parent, object/**/){
 
 function repositoriosPedidos() {		
 	var repositoriosFullNames = JSON.parse(this.responseText).items;
-	repositoriosFullNames.forEach(function(elem) {
-		appendNodeWithText(seccionRepositorio,"p",elem["full_name"]);
-		var lista = document.createElement("ul");
-		seccionRepositorio.appendChild(lista);
-		crearliDeListas(lista,elem.owner,"login");
-		crearliDeListas(lista,elem,"description","url","watchers_count");
-	});
+	if(this.status == 403) {
+		alert("Error 403, espere un rato antes de buscar de nuevo");
+	}
+	else if(repositoriosFullNames !== undefined) {
+		repositoriosFullNames.forEach(function(elem) {
+			appendNodeWithText(seccionRepositorio,"p",elem["full_name"]);
+			var lista = document.createElement("ul");
+			seccionRepositorio.appendChild(lista);
+			crearliDeListas(lista,elem.owner,"login");
+			crearliDeListas(lista,elem,"description","url","watchers_count");
+		});
+	}
 }
 //--------------------------------------------------------------
 //Funciones para punto 10 --------------------------------------
@@ -88,7 +95,6 @@ function eliminarTagsFromParent(parent,nodoTag) {
 
 function teclaPressBuscador(){
 	if(repoBuscadoCampo.value.length >= 5) {
-		//CODIGO REPETIDO CAMBIAR
 		eliminarTagsFromParent(seccionRepositorio,"p");
 		eliminarTagsFromParent(seccionRepositorio,"ul");
 		//-------------------------
@@ -97,6 +103,21 @@ function teclaPressBuscador(){
 	}
 }
 //--------------------------------------------------------------
+//Funciones para punto 12 --------------------------------------
+var mockInput = [{name:"Ezequiel",id:"123",email:"ezequiel@pepemail.com"},{name:"Agustin",id:"654",email:"agustin@pepemail.com"},
+				{name:"Jack Bauer",id:"123",email:"jackbauer@pepemail.com"},{name:"Sherlock H.",id:"123",email:"casas@pepemail.com"}]
+
+function crearTabla(matrix){
+	var linea;
+	matrix.forEach(function(elem){
+		linea = document.createElement("tr");
+		tabla.appendChild(linea);
+		appendNodeWithText(linea,"td",elem.id);
+		appendNodeWithText(linea,"td",elem.name);
+		appendNodeWithText(linea,"td",elem.email);
+	})
+}
+//---------------------------------------------------------------
 
 function init() {
 	//Punto 4 ejecucion---------------------------------
@@ -115,6 +136,9 @@ function init() {
 	//-------------------------------------------------
 	//Punto 10 ejecucion ------------------------------
 	repoBuscadoCampo.addEventListener("keyup",teclaPressBuscador);
+	//-------------------------------------------------
+	//Punto 12 ejecucion-------------------------------
+	crearTabla(mockInput);
 	//-------------------------------------------------
 }
 
