@@ -1,0 +1,6 @@
+<a class="btn-default" ui-sref="artistaElegido({artistaSeleccionado:artista, id:artista.name})"><article class="artista col-sm-6 col-sm-offset-0 col-lg-4">
+	<img class="img-circle" src={{artista.images[0].url}} alt="imagen del artista">
+	<p class="nombre-artista">{{artista.name.substring(0,30)}}</p>
+	<p class="cantidad-seguidores">Seguidores: {{artista.followers.total}}</p>
+	<ul ng-if="artista.genres.length > 0" > Generos  <li ng-repeat="genero in artista.genres | limitTo: 3"> {{genero}} </li> </ul>
+</article></a>

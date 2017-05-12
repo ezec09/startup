@@ -1,0 +1,14 @@
+<header class="barra-principal row"> 
+		<a ui-sref="home" class="col-xs-offset-5 col-sm-1 col-sm-offset-5"><img src="assets/icon.jpg" alt="Icono Spotisearch"></a>
+</header>
+<div class="row">
+	<section class="col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3" id="spotisearch">
+		<h1>Spotisearch</h1>
+		<p>Busca tus canciones preferidas, solo ingresa el nombre del artista debajo y disfuta!</p>
+		<input focusear class="col-sm-12 col-xs-12" ng-model="busqueda" ng-keyup="buscarArtista()" placeholder="Escribe el nombre de tu artista favorito">
+	</section>
+</div>
+<div class="clear"></div>
+<div class="row">
+	<una-cancion ng-repeat="cancion in cancionesfavoritas" cancion="cancion"><una-cancion>
+</div>

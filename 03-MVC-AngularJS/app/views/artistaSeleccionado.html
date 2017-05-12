@@ -1,0 +1,14 @@
+<header class="barra-principal row"> 
+		<a ui-sref="home" class="col-sm-1 col-sm-offset-5"><img src="assets/icon.jpg" alt="Icono Spotisearch"></a>
+		<input class="col-sm-3 col-sm-offset-2" type="text" ng-model="busqueda" ng-keyup="nuevaBusqueda()" placeholder="Ingrese nueva busqueda aqui">
+</header>
+<div class="row" >
+	<section class="col-lg-8 col-lg-offset-2 col-sm-12 col-sm-offset-0">
+		<img class="artista-seleccionda-img img-circle" src={{artista.images[0].url}} alt="imagen del artista">
+		<h1 class="artista-seleccionda-info"> {{artista.name.substring(0,30)}} </h1>
+		<p class="artista-seleccionda-info"> Seguidores: {{artista.followers.total}} </p>
+		<ul ng-if="artista.genres.length > 0" class="artista-seleccionda-info"> Generos  <li ng-repeat="genero in artista.genres | limitTo: 3"> {{genero}} </li> </ul>
+		<div class="clear"></div>
+		<un-album ng-repeat="album in albumesFull" album=album artistname="artista.name">artista.name.substring(0,20)</un-album>
+	</section>
+</div>

@@ -1,0 +1,13 @@
+<header class="barra-principal row"> 
+		<a ui-sref="home" class="col-xs-offset-5 col-sm-1 col-sm-offset-5"><img src="assets/icon.jpg" alt="Icono Spotisearch"></a>
+</header>
+<div class="row">
+	<section class="col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3" id="spotisearch">
+		<h1>Artistas</h1>
+		<p>Estas bucando: {{busqueda}}</p>
+		<input focusear class="col-sm-12 col-xs-12" ng-model="busqueda" ng-keyup="buscarArtista()">
+	</section>
+</div>
+<div class="row" style="margin-top: 20px">
+	<un-artista ng-repeat="artist in resultados" artista=artist></un-artista>
+</div>

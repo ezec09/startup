@@ -1,0 +1,151 @@
+ /*HOME CSS*/
+.barra-principal{
+  margin-bottom: 10px;
+  background: black;
+  border-radius: 20px;
+}
+
+.barra-principal img {
+  width: 70px;
+  height: 70px;
+}
+
+.barra-principal input {
+  margin-top: 20px; 
+  border: 1px solid;
+}
+
+
+/*ARTISTA BUSQUEDA CSS*/
+.artista {
+  padding: 10px;
+  height: 170px;
+  border-radius: 20px;
+  border: 1px solid;
+}
+
+.artista img {
+  float: left;
+  width: 70px;
+  height: 70px;
+}
+
+.nombre-artista {
+  width: 70%;
+  font-size: 18px;
+  float: right;
+}
+
+.cantidad-seguidores {
+   width: 70%;
+  float: right;
+}
+
+.artista ul {
+  width: 70%;
+  float: right;
+  padding: 0 20px;
+ }
+
+/*ARTISTA ELEGIDO CSS*/
+.clear {
+  clear: both;
+  height: 40px; 
+}
+
+.artista-seleccionda-img {
+  width: 40%;
+  height: 40%;
+  float: left;
+}
+
+.artista-seleccionda-info {
+  width: 52%;
+  margin-left: 3%;
+  float: left;
+}
+
+ul.artista-seleccionda-info {
+  padding: 0 20px;
+}
+
+.album {
+  padding: 10px;
+  height: 120px;
+  border-radius: 20px;
+  border: 1px solid;
+}
+
+.album-busqueda-img {
+  width: 70px;
+  height: 70px;
+  float: left;
+}
+
+.album-busqueda-info {
+  float: left;
+  margin-left: 5px;
+  width: 50%;
+}
+/*ALBUM ELEGIDO CSS*/
+.album-seleccionado-img {
+  float: left;
+  width: 300px;
+  height: 300px;
+}
+
+.album-seleccionado-info {
+  float: left;
+  margin-left: 20px;
+  width: 55%;
+}
+
+.clickeable:hover{
+  background: red;
+  border-radius: 20px;
+}
+
+.fav-img {
+  width: 20px;
+  height: 20px;
+  filter: grayscale(100%);
+}
+
+.fav-img-selected {
+  width: 20px;
+  height: 20px;
+}
+/*----------------------*/
+article.fav-song-info {
+  height: 150px;
+}
+img.fav-song-info {
+  width: 90px;
+  height: 90px;
+  float: left;
+}
+
+h1.fav-song-info {
+  font-size: 20px;
+  width: 65%; 
+  float: left;
+  margin: 0 0 5px 20px;
+}
+
+p.fav-song-info {
+  font-size: 16px;
+  width: 65%;
+  float: left;
+  margin: 0 0 5px 20px;
+}
+
+audio.fav-song-info {
+  display: block;
+  margin: 0 auto;
+}
+
+.clear-fav-song-info {
+  clear: both;
+  height: 5px;
+}
+
