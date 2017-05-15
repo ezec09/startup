@@ -1,5 +1,9 @@
-<a class="btn-default" ui-sref="albumElegido({id:artistname, albumNombre:album.name, albumSeleccionado:album})"><article class="album col-sm-4 col-sm-offset-0 col-lg-4 col-lg-offset-0">
-	<img class="img-circle album-busqueda-img"src={{album.images[0].url}} alt="imagen del album">
-	<p class="album-busqueda-info">{{album.name.substring(0,30)}}</p>
-	<p class="album-busqueda-info">{{album.release_date}}</p>
-</article></a>
+<a class="btn-default" ui-sref="albumElegido({id:artistname, albumNombre:album.name, albumSeleccionado:album})">
+	<div class="separar-arriba col-sm-4 col-sm-offset-0 col-lg-4 col-lg-offset-0">
+		<article class="album col-sm-12">
+			<img class="img-circle album-busqueda-img"src={{album.images[0].url}} alt="imagen del album">
+			<p class="album-busqueda-info">{{album.name.substring(0,30)}}</p>
+			<p class="album-busqueda-info">{{album.release_date}}</p>
+		</article>
+	</div>
+</a>

@@ -1,32 +1,4 @@
 angular.module('spotifyAppApp')
-	.directive('unArtista', function(){
-		return {
-			retrict: 'E',
-			scope: {
-				artista: '=artista'
-			},
-			templateUrl: 'scripts/directives/artistaView.html'
-		};
-	})
-	.directive('unAlbum', function(){
-		return {
-			retrict: 'E',
-			scope: {
-				album: '=album',
-				artistname: '='
-			},
-			templateUrl: 'scripts/directives/albumView.html'
-		};
-	})
-	.directive('focusear', function(){
-		return {
-			retrict: 'A',
-			scope: {},
-			link:function(scope,element,attr){
-				element.focus();
-			}
-		};
-	})
 	.directive('favorito',['localStorageService',function(localStorage){
 		return {
 			retrict: 'E',
@@ -55,7 +27,13 @@ angular.module('spotifyAppApp')
 						favoritos= [];
 					}
 					if(favoritos.includes(scope.cancionid)){
-						favoritos.pop(scope.cancionid);
+						var i;
+						for(i = 0; i < favoritos.length; i++) {
+							if(favoritos[i] === scope.cancionid){
+								break;
+							}
+						}
+						favoritos.splice(i,1);
 						element.children().first().addClass('fav-img').removeClass('fav-img-selected');
 					} else {
 						favoritos.push(scope.cancionid);
@@ -65,13 +43,4 @@ angular.module('spotifyAppApp')
 				});
 			}
 		}
-	}])
-	.directive('unaCancion', function(){
-		return {
-			retrict: 'E',
-			scope: {
-				cancion: '='
-			},
-			templateUrl: 'scripts/directives/cancionView.html'
-		};
-	});
+	}]);

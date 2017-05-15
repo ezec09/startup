@@ -1,5 +1,6 @@
 angular.module('spotifyAppApp')
-	.controller('albumSeleccionadoCtrl',['$scope','$stateParams', '$http','$state','localStorageService', function($scope,$stateParams, $http,$state,localStorage) {
+	.controller('albumSeleccionadoCtrl',['$scope','$stateParams', '$state','localStorageService','requestSpotify', 
+		function($scope,$stateParams, $state,localStorage,requestSpotify) {
 		$scope.canciones = [];
 		$scope.ordenimientoEstados = [{ordenar:false,desc:'(unorder)'},{ordenar:true,reverse:false,desc:'(asc)'},{ordenar:true,reverse:true,desc:'(desc)'}]
 		$scope.ordenamiento = $scope.ordenimientoEstados[0];
@@ -26,11 +27,10 @@ angular.module('spotifyAppApp')
 			} else {
 				$scope.album = localStorage.get('albumElegido');
 			}
-
-			$http.get('https://api.spotify.com/v1/albums/' + $scope.album.id + '/tracks')
-			.then(function(response){
+			requestSpotify.getSongsFromAlbum($scope.album.id,function(response){
 				$scope.canciones = response.data.items;
 			},function(){});
+
 		}
 
 		inicializar();

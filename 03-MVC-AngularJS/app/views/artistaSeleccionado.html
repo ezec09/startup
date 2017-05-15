@@ -4,7 +4,7 @@
 </header>
 <div class="row" >
 	<section class="col-lg-8 col-lg-offset-2 col-sm-12 col-sm-offset-0">
-		<img class="artista-seleccionda-img img-circle" src={{artista.images[0].url}} alt="imagen del artista">
+		<img imagensecundaria="assets/notfound.png" class="artista-seleccionda-img img-circle" src={{artista.images[0].url}} alt="imagen del artista">
 		<h1 class="artista-seleccionda-info"> {{artista.name.substring(0,30)}} </h1>
 		<p class="artista-seleccionda-info"> Seguidores: {{artista.followers.total}} </p>
 		<ul ng-if="artista.genres.length > 0" class="artista-seleccionda-info"> Generos  <li ng-repeat="genero in artista.genres | limitTo: 3"> {{genero}} </li> </ul>

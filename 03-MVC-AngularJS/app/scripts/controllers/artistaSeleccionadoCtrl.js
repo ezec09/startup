@@ -1,5 +1,5 @@
 angular.module('spotifyAppApp')
-	.controller('artistaSeleccionadoCtrl',['$scope','$stateParams', '$http', '$state','localStorageService', function($scope,$stateParams, $http,$state,localStorage) {
+	.controller('artistaSeleccionadoCtrl',['$scope','$stateParams', '$state','localStorageService','requestSpotify', function($scope,$stateParams,$state,localStorage,requestSpotify) {
 		
 		$scope.albumesLite = [];
 		$scope.albumesFull = [];
@@ -14,19 +14,15 @@ angular.module('spotifyAppApp')
 				localStorage.set('artistaElegido',$scope.artista);
 			} else {
 				$scope.artista = localStorage.get('artistaElegido');
-				console.log("entra lol");
 			}
-			console.log($scope.artista);
-			$http.get('https://api.spotify.com/v1/artists/' + $scope.artista.id + '/albums')
-				.then(function(response){
+			requestSpotify.getAlbumLiteFromArtista($scope.artista.id,function(response){
 					$scope.albumesLite = response.data.items;
 					for(var i = 0; i < $scope.albumesLite.length; i++){		
-						$http.get('https://api.spotify.com/v1/albums/'+$scope.albumesLite[i].id)
-						.then(function(response){
+						requestSpotify.getAlbumFullFromAlbumLite($scope.albumesLite[i].id,function(response){
 							$scope.albumesFull.push(response.data);
-						},function(){});
+						},function(){})
 					}
-				},function(){});
+			},function(){})
 		}
 		inicializar();
 	}]);

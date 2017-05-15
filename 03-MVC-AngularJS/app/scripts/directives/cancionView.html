@@ -1,8 +1,11 @@
-<article class="fav-song-info album col-sm-6 col-sm-offset-0 col-lg-4">
-	<img class="img-circle fav-song-info" src={{cancion.album.images[0].url}} alt="Imagen del album">
-	<h1 class="fav-song-info">{{cancion.name.substring(0,20)}}</h1>
-	<p class="fav-song-info"> Artista: {{cancion.artists[0].name.substring(0,20)}}</p>
-	<p class="fav-song-info"> Album: {{cancion.album.name.substring(0,20)}}</p>
-	<div class="clear-fav-song-info"></div>
-	<audio class="fav-song-info" src={{cancion.preview_url}} controls>Error al cargar preview</audio>
-</article>
+<div class="separar-arriba col-sm-6 col-sm-offset-0 col-lg-4">
+	<article class="fav-song-info col-sm-12">
+		<img imagensecundaria="assets/notfound.png" class="img-circle fav-song-info" src={{cancion.album.images[0].url}} alt="Imagen del album">
+		<input class="remove-fav" type="image" src="assets/remove-favorito.png" ng-click="borrarFavorito()">
+		<h1 class="fav-song-info">{{cancion.name.substring(0,20)}}</h1>
+		<p class="fav-song-info"> Artista: {{cancion.artists[0].name.substring(0,20)}}</p>
+		<p class="fav-song-info"> Album: {{cancion.album.name.substring(0,20)}}</p>
+		<div class="clear-fav-song-info"></div>
+		<audio class="fav-song-info" src={{cancion.preview_url}} controls>Error al cargar preview</audio>
+	</article>
+</div>

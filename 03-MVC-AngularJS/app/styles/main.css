@@ -118,6 +118,9 @@ ul.artista-seleccionda-info {
 /*----------------------*/
 article.fav-song-info {
   height: 150px;
+  border-radius: 20px;
+  border: 1px solid;
+  padding-top: 10px;
 }
 img.fav-song-info {
   width: 90px;
@@ -149,3 +152,14 @@ audio.fav-song-info {
   height: 5px;
 }
 
+.remove-fav {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.separar-arriba {
+  margin-top: 10px;
+}

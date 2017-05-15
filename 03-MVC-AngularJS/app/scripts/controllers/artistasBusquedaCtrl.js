@@ -1,16 +1,14 @@
 angular.module('spotifyAppApp')
-	.controller('artistaBusquedaCtrl',['$scope','$stateParams','$http','$state','localStorageService',function($scope,$stateParams,$http,$state,localStorage) {
+	.controller('artistaBusquedaCtrl',['$scope','$stateParams','$state','localStorageService','requestSpotify',
+		function($scope,$stateParams,$state,localStorage,requestSpotify) {
 		$scope.resultados = [];
 		
 		$scope.buscarArtista = function(){
 			if($scope.busqueda.length > 0) {
 				localStorage.set('busqueda', $scope.busqueda);
-				var url = 'https://api.spotify.com/v1/search?q=' + $scope.busqueda + '&type=artist';
-				$http.get(url).then(function succesCallBack(response){
-						$scope.resultados = response.data.artists.items;
-						},function errorCallBack(response){
-						})
-				}
+				requestSpotify.getSearchOfArtist($scope.busqueda,function(response){
+						$scope.resultados = response.data.artists.items;},function(){});
+			}
 			else {
 				$state.go('home');
 				localStorage.set('busqueda', '');
